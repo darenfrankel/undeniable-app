@@ -19,6 +19,8 @@ interface CSVRow {
   email?: string;
 }
 
+// Insurance companies populated from https://content.naic.org/cis_consumer_information.htm
+
 // Function to load and parse insurance company data from CSV
 export async function loadInsuranceCompanies(): Promise<InsuranceCompany[]> {
   try {
