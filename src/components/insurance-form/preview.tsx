@@ -35,7 +35,7 @@ export function EmailPreview({ formData, companies }: EmailPreviewProps) {
     };
 
     let toAddress = '';
-    let error: string | undefined;
+    let error: string | JSX.Element | undefined;
 
     if (formData.insuranceCompany) {
       if (formData.insuranceCompany === 'Other - not listed') {
@@ -43,7 +43,13 @@ export function EmailPreview({ formData, companies }: EmailPreviewProps) {
       } else {
         const company = companies.find(c => c.name === formData.insuranceCompany);
         if (!company) {
-          error = 'Email not found, please locate the contact email via your insurance company';
+          error = 'Selected company not found.';
+        } else if (!company.email || company.email.trim() === '') {
+          error = (
+            <>
+              Email not found, please locate the contact email via your insurance company. If you know the email address, please help improve this tool by sharing it with us <a href="https://forms.gle/PRZG9tpdQpFSKSjJ7" target="_blank" className="text-blue-500 underline" rel="noopener noreferrer">here</a>.
+            </>
+          );
         } else {
           toAddress = company.email;
         }

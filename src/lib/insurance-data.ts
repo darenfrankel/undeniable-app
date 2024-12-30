@@ -7,7 +7,7 @@ import { z } from 'zod';
 // Define the schema for insurance company data
 export const InsuranceCompanySchema = z.object({
   name: z.string().min(1, "Company name is required"),
-  email: z.string().email("Invalid email address"),
+  email: z.string().email("Invalid email address").or(z.literal(' ')),
   templateId: z.string().optional(),
 });
 
@@ -15,10 +15,9 @@ export type InsuranceCompany = z.infer<typeof InsuranceCompanySchema>;
 
 // Function to load and parse insurance company data from CSV
 interface CSVRow {
-    name: string;
-    email: string;
-    templateId?: string;
-  }
+  name: string;
+  email?: string;
+}
 
 // Function to load and parse insurance company data from CSV
 export async function loadInsuranceCompanies(): Promise<InsuranceCompany[]> {
@@ -28,9 +27,9 @@ export async function loadInsuranceCompanies(): Promise<InsuranceCompany[]> {
     if (!response.ok) {
       throw new Error(`Failed to fetch CSV: ${response.statusText}`);
     }
-    
+
     const csvText = await response.text();
-    
+
     return new Promise((resolve, reject) => {
       Papa.parse<CSVRow>(csvText, {
         header: true,
@@ -39,12 +38,16 @@ export async function loadInsuranceCompanies(): Promise<InsuranceCompany[]> {
           try {
             // Validate each row against our schema
             const validatedData = results.data.map((row: CSVRow) => {
-              return InsuranceCompanySchema.parse({
-                name: row.name,
-                email: row.email,
-                templateId: row.templateId
-              });
-            });
+              try {
+                return InsuranceCompanySchema.parse({
+                  name: row.name,
+                  email: row.email && row.email.trim() !== '' ? row.email.trim() : ' ',
+                });
+              } catch (error) {
+                console.warn(`Skipping row due to validation error: ${error}`);
+                return null;
+              }
+            }).filter((company): company is InsuranceCompany => company !== null);
             resolve(validatedData);
           } catch (error: unknown) {
             reject(new Error(`CSV validation error: ${error instanceof Error ? error.message : String(error)}`));
