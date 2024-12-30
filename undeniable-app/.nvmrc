@@ -1,7 +1,0 @@
-# Create .nvmrc file
-echo "18" > .nvmrc
-
-# Add and commit both files
-git add .nvmrc amplify.yml
-git commit -m "Update Amplify configuration and add Node.js version specification"
-git push origin main
