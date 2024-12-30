@@ -1,4 +1,4 @@
-// src/app/privacy/privacy-page.tsx
+// src/app/privacy/privacy-page.tsxs
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
         <div className="bg-white shadow sm:rounded-lg">
           <div className="px-4 py-5 sm:p-6">
             <h1 className="text-2xl font-bold mb-8">Privacy Policy</h1>
-            
+
             <section className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Overview</h2>
               <p className="text-gray-600 mb-4">

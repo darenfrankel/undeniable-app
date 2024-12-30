@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -6,8 +7,8 @@ import { GitHubIcon } from '@/components/ui/icons';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
-    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
 
     return (
         <nav className="border-b border-gray-200 bg-white">
@@ -19,7 +20,6 @@ export default function Navbar() {
                                 UNDENIABLE
                             </Link>
                         </div>
-                        {/* Mobile menu button */}
                         <div className="flex items-center sm:hidden">
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
@@ -36,7 +36,6 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Desktop navigation */}
                     <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-8">
                         <Link
                             href="/"
@@ -57,7 +56,7 @@ export default function Navbar() {
                             About
                         </Link>
                         <a
-                            href="https://github.com/darenfrankel/claim-email-generator"
+                            href="https://github.com/darenfrankel/undeniable-app"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-500 hover:text-gray-700"
@@ -69,7 +68,6 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile menu */}
             <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`}>
                 <div className="pt-2 pb-3 space-y-1">
                     <Link
@@ -93,7 +91,7 @@ export default function Navbar() {
                         About
                     </Link>
                     <a
-                        href="https://github.com/darenfrankel/claim-email-generator"
+                        href="https://github.com/darenfrankel/undeniable-app"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block pl-3 pr-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 border-l-4 border-transparent"

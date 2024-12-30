@@ -5,6 +5,7 @@ import { Analytics } from "@/components/analytics-script";
 import { CookieBanner } from "@/components/cookie-banner";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar";
+import { Footer } from "@/components/ui/footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
           <main className="flex-1">
             {children}
           </main>
+          <Footer />
           <CookieBanner />
           <Analytics />
         </div>

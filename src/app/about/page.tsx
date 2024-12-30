@@ -36,7 +36,7 @@ export default function AboutPage() {
                                     <li className="text-muted-foreground">Doesn't collect personal data - we only run Google Anlaytics to get aggregated traffic data</li>
                                 </ul>
                                 <p className="text-muted-foreground">
-                                    Interested in verifying this for yourself? Check out our <a href="https://github.com/darenfrankel/claim-email-generator/" className="text-blue-600 hover:text-blue-800 underline">code here on Github</a>.
+                                    Interested in verifying this for yourself? Check out our <a href="https://github.com/darenfrankel/undeniable-app/" className="text-blue-600 hover:text-blue-800 underline">code here on Github</a>.
                                 </p>
                             </div>
                         </section>

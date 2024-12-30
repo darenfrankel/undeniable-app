@@ -1,6 +1,6 @@
-// src/components/analytics-script.tsx
 'use client';
-import React, { useEffect } from 'react';
+
+import React, { Suspense } from 'react';
 import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
 import {
@@ -10,32 +10,27 @@ import {
 } from '@/lib/analytics';
 import { getStoredConsent } from '@/lib/consent-store';
 
-export function Analytics() {
+function AnalyticsContent() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // Effect for handling route changes
-  useEffect(() => {
+  React.useEffect(() => {
     if (getStoredConsent() === 'accepted') {
       const url = pathname + searchParams.toString();
       trackPageView(url);
     }
   }, [pathname, searchParams]);
 
-  // Don't render scripts if analytics is disabled or no consent
   if (!isAnalyticsEnabled() || getStoredConsent() !== 'accepted') {
     return null;
   }
 
   return (
     <>
-      {/* Load GA script */}
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
       />
-
-      {/* Initialize GA */}
       <Script
         id="google-analytics"
         strategy="afterInteractive"
@@ -49,7 +44,6 @@ export function Analytics() {
               page_path: '${pathname}${searchParams.toString()}',
               send_page_view: true
             });
-            // Respect Do Not Track setting
             if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack) {
               window['ga-disable-${GA_MEASUREMENT_ID}'] = true;
             }
@@ -57,5 +51,13 @@ export function Analytics() {
         }}
       />
     </>
+  );
+}
+
+export function Analytics() {
+  return (
+    <Suspense fallback={null}>
+      <AnalyticsContent />
+    </Suspense>
   );
 }
