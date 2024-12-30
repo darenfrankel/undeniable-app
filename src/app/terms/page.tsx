@@ -11,7 +11,7 @@ export default function TermsPage() {
                         <section className="space-y-4">
                             <h2 className="text-xl font-semibold text-foreground">Acceptance of Terms</h2>
                             <p className="text-muted-foreground">
-                                By using the Insurance Appeal Helper tool ("Tool"), you acknowledge that you have read, understood, and agree to be bound by the following terms and conditions:
+                                By using the the email template or email generation tool at https://www.undeniablehealth.org ("Tool"), you acknowledge that you have read, understood, and agree to be bound by the following terms and conditions:
                             </p>
                         </section>
 

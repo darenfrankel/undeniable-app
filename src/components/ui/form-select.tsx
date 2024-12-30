@@ -14,7 +14,7 @@ interface FormSelectProps {
   name: string;
   control: Control<any>;
   options: Option[];
-  label: string;
+  label?: string;
   error?: string;
   showOther?: boolean;
 }
@@ -165,7 +165,7 @@ export function FormSelect({
                   ref={searchRef}
                   type="text"
                   className="flex w-full bg-background py-2 pl-2 text-sm placeholder:text-muted-foreground focus:outline-none"
-                  placeholder={`Search ${label.toLowerCase()}...`}
+                  placeholder={`Search ${label?.toLowerCase() ?? 'options'}...`}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyDown={handleKeyDown}

@@ -74,7 +74,7 @@ export function InsuranceForm({ companies, onFormChange }: InsuranceFormProps) {
           type="text"
           id="name"
           maxLength={30}
-          placeholder="Enter your name (letters only)"
+          placeholder="Enter your name"
           className="w-full px-3 py-2 text-sm rounded-md border border-input bg-background text-foreground
                    placeholder:text-muted-foreground focus:outline-none focus:ring-2
                    focus:ring-ring focus:border-ring"
@@ -85,6 +85,11 @@ export function InsuranceForm({ companies, onFormChange }: InsuranceFormProps) {
       </div>
 
       <div className="space-y-2">
+        <label className="block text-sm font-medium text-primary">Insurance Company</label>
+        <p className="text-xs text-gray-600">
+          Emails aren't always publicly available - help us populate this with your insurance company's contact{' '}
+          <a href="https://forms.gle/PRZG9tpdQpFSKSjJ7" className="text-blue-500 underline">here</a>.
+        </p>
         <FormSelect
           name="insuranceCompany"
           control={control}
@@ -95,7 +100,6 @@ export function InsuranceForm({ companies, onFormChange }: InsuranceFormProps) {
             })),
             { value: 'Other - not listed', label: 'Other - not listed' }
           ]}
-          label="Insurance Company"
           error={errors.insuranceCompany?.message}
           showOther={true}
         />
@@ -138,7 +142,7 @@ export function InsuranceForm({ companies, onFormChange }: InsuranceFormProps) {
           type="text"
           id="claimNumber"
           maxLength={30}
-          placeholder="Enter claim number (letters and numbers only)"
+          placeholder="Enter claim number"
           className="w-full px-3 py-2 text-sm rounded-md border border-input bg-background text-foreground
                    placeholder:text-muted-foreground focus:outline-none focus:ring-2
                    focus:ring-ring focus:border-ring"

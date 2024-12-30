@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Insurance Appeal Helper",
-  description: "Generate appeal letters for denied insurance claims",
+  title: "Undeniable",
+  description: "Appeal denied healthcare claims with our quick, easy, free, and privates email template and generator.",
   icons: {
     icon: "/favicon.ico",
   },

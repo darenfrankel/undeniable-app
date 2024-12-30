@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Overview</h2>
               <p className="text-gray-600 mb-4">
-                This Privacy Policy describes how we collect, use, and handle your information when you use our Insurance Appeal Helper tool.
+                This Privacy Policy describes how we collect, use, and handle your information when you use our email template or email generator tool.
               </p>
             </section>
 

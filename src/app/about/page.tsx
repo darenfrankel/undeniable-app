@@ -45,7 +45,7 @@ export default function AboutPage() {
                             <h2 className="text-xl font-semibold text-foreground mb-3">Who Created Undeniable</h2>
                             <div className="space-y-4">
                                 <p className="text-muted-foreground">
-                                    Undeniable was created by <a href="https://www.linkedin.com/in/darenfrankel" className="text-blue-600 hover:text-blue-800 underline">Daren Frankel</a> who wanted to create something that both did some good for society as well as to further his software development skills.
+                                    Undeniable was created by <a href="https://www.linkedin.com/in/darenfrankel" className="text-blue-600 hover:text-blue-800 underline">Daren Frankel</a> who wanted to create something that both did some good for society as well as to further his software development skills. Undeniable was created by Daren mostly by leveraging Anthropic's Claude chatbot.
                                 </p>
                             </div>
                         </section>
