@@ -1,7 +1,30 @@
 name,email,templateId
 Aetna,claims@aetna.com,aetna_standard
 Blue Cross Blue Shield,claims@bcbs.com,bcbs_standard
+Blue Cross Blue Shield of Massachusetts,grievances@bcbsma.com,
+Blue Cross Blue Shield of Michigan,EDICustMgmt@bcbsm.com,
+Blue Cross Blue Shield of New Jersey,HorizonEDI@HorizonBlue.com,
+Blue Cross Blue Shield of North Carolina,ncmedicaidgrievances@healthybluenc.com,
+Blue Cross Blue Shield of Tennessee,,
+Blue Cross of California,,
+California Physicians Service,,
+Carefirst Inc.,,
+Caresource,,
+Centene Corp.,,
 Cigna,claims@cigna.com,cigna_standard
+Cigna Health,,
+CVS Health (including Aetna Health),,
+Elevance Health Inc. (formerly Anthem),,
+GuideWell (including Florida Blue),,
+Health Care Services Corporation (HCSC),,
+"Health Net of California, Inc.",,
+Highmark Group,,
 Humana,appeals@humana.com,humana_standard
+Independence Health Group Inc.,,
+Kaiser Foundation (Kaiser Permanente),,
 Kaiser Permanente,appeals@kp.org,kp_standard
+Metropolitan,,
+Molina Healthcare Inc.,,
+Point32Health Inc.,,
 UnitedHealthcare,appeals@uhc.com,uhc_standard
+UPMC Health System,,
